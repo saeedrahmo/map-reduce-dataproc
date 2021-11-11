@@ -8,3 +8,7 @@ gcloud dataproc clusters create cluster-coen424-a-2 --bucket bucket-coen424-a-2 
 
 Build sample wordcount 
 mvn clean package -Dbigtable.projectID=coen424-a-2 -Dbigtable.instanceID=bigtable-coen424-a-2
+
+Execute the job
+./cluster.sh start cluster-coen424-a-2
+
