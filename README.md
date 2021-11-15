@@ -26,3 +26,6 @@ yarn jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar wordcount /word
 hdfs dfs -ls /tmp/result/
 hdfs dfs -get /tmp/result* ./tmp/.
 
+Python wordcount
+/usr/lib/hadoop/hadoop-streaming.jar
+
