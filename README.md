@@ -12,3 +12,17 @@ mvn clean package -Dbigtable.projectID=coen424-a-2 -Dbigtable.instanceID=bigtabl
 Execute the job
 ./cluster.sh start cluster-coen424-a-2
 
+Dataproc wordcount example:
+
+hdfs dfs -put pg20417.txt /wordcountfiles/
+ls /usr/lib/hadoop-mapreduce/
+pwd
+mkdir tmp
+cp /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar .
+cd tmp
+cp ../hadoop-mapreduce-examples.jar .
+unzip hadoop-mapreduce-examples.jar 
+yarn jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar wordcount /wordcountfiles/ /tmp/result/
+hdfs dfs -ls /tmp/result/
+hdfs dfs -get /tmp/result* ./tmp/.
+
