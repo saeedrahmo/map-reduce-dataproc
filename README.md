@@ -57,3 +57,5 @@ yarn jar /usr/lib/hadoop/hadoop-streaming.jar -file mypy/mapper.py -mapper mypy/
 
 more part-00000
 realpath part-00000
+
+https://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/
