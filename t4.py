@@ -27,8 +27,18 @@ batch_unit = 10
 counter_total = 0
 counter_batch = batch_id-1
 
-with open("NDBench-testing.csv") as file:
+metric_current = ""
+
+with open("NDBench-testing-mapped.csv") as file:
     for line in file:
+        # remove leading and trailing whitespace
+        line = line.strip()
+        line = line.rstrip()
+        # parse the input we got from mapper.py
+        counter_batch, metric_selected, metric = line.split('\t')
+        if metric_current != metric_selected:
+            metric_selected = metric_selected
+
         counter_total += 1
         try:
             metric = line.rstrip().split(',')[metric_dict[metric_selected]]
