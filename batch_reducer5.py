@@ -3,6 +3,17 @@
 
 from operator import itemgetter
 import sys
+import math
+
+def median(lst):
+    sortedLst = sorted(lst)
+    lstLen = len(lst)
+    index = (lstLen - 1) // 2
+   
+    if (lstLen % 2):
+        return sortedLst[index]
+    else:
+        return (sortedLst[index] + sortedLst[index + 1])/2.0
 
 batch_current = 0
 metric_value_min = 0
@@ -29,24 +40,27 @@ for line in sys.stdin:
         continue
     if batch_current != batch_id_current:
         if(batch_current != 0) and (batch_id_current != 1) and (batch_id_current-batch_current == 1):
-            metric_mean=sum(metric_list)/len(metric_list)
-            # TODO: calculate deviations
+            # Number of observations
+            batch_unit=len(metric_list)
+            # Mean of the data
+            metric_mean=sum(metric_list)/batch_unit
+            metric_med=median(metric_list)
+            # Square deviations
+            deviations = [(x - metric_mean) ** 2 for x in metric_list]
+            # Variance
+            variance = sum(deviations) / batch_unit
+            # Standard deviation
+            std_dev = math.sqrt(variance)
             print('batch_id: {}\t metric: {}\t min: {}\t max: {}\t med: {}'.format(
-                batch_current, metric_selected, metric_value_min, metric_value_max, metric_value_med))
+                batch_current, metric_selected, metric_list[0], metric_list[-1], metric_med))
         metric_list.append(metric_value)
-        #batch_sum += metric_value
         batch_current = batch_id_current
-        metric_value_min = metric_value
-        batch_current_counter=1
         continue
     else:
         metric_list.append(metric_value)
-        #batch_sum += metric_value
-        metric_value_max = metric_value
-        batch_current_counter += 1
-        if batch_current_counter == (batch_unit/2):
-            metric_value_med = metric_value
         continue
+
+
 
 print('batch_id: {}\t metric: {}\t min: {}\t max: {}\t med: {}'.format(
     batch_current, metric_selected, metric_value_min, metric_value_max, metric_value_med))
