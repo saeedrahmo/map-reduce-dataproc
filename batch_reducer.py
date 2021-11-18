@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+"""reducer.py"""
+
+from operator import itemgetter
 import sys
 
 batch_current = 0
@@ -25,6 +29,7 @@ for line in sys.stdin:
         metric_value_min = metric_value
     else:
         metric_value_max = metric_value
+        continue
 
 print('batch_id: {}\t metric: {}\t min: {}\t max: {}'.format(
     batch_current, metric_selected, metric_value_min, metric_value_max))

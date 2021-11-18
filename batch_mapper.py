@@ -1,4 +1,6 @@
 import sys
+#!/usr/bin/env python
+"""mapper.py"""
 
 metric_dict = {
     "CPUUtilization_Average": 0,
@@ -23,10 +25,12 @@ for line in sys.stdin:
             ',')[metric_dict[metric_selected]]
         if metric_value.replace('.', '', 1).isdigit() == False:
             continue
-        if (counter_total % (batch_unit) == 0) and (counter_total >= (batch_id*batch_unit)):
+        elif (counter_total % (batch_unit) == 0) and (counter_total >= (batch_id*batch_unit)):
             batch_id_current += 1
-        if (counter_total >= batch_id*batch_unit) and (counter_total < (batch_id+batch_size)*batch_unit):
+        elif (counter_total >= batch_id*batch_unit) and (counter_total < (batch_id+batch_size)*batch_unit):
             print('{}\t{}\t{}'.format(
                 batch_id_current, metric_selected, metric_value))
+        else:
+            continue
     except Exception:
         continue
