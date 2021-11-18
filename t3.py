@@ -18,7 +18,7 @@ metric_dict = {
     "MemoryUtilization_Average": 3,
     "Final_Target": 4
 }
-metric_selected = "MemoryUtilization_Average"
+metric_selected = "CPUUtilization_Average"
 
 batch_size = 5
 batch_id = 2

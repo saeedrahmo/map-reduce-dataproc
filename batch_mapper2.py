@@ -30,7 +30,7 @@ for line in sys.stdin:
             batch_id_current += 1            
         elif (counter_total >= batch_id*batch_unit) and (counter_total < (batch_id+batch_size)*batch_unit):
             print('{}\t{}\t{}'.format(
-                batch_id_current, metric_selected, metric_value))
+                batch_id_current, metric_value, metric_selected))
         else:           
             continue
     except Exception:

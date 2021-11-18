@@ -13,7 +13,7 @@ for line in sys.stdin:
     line = line.strip()
     line = line.rstrip()
     # parse the input we got from mapper.py
-    batch_id_current, metric_selected, metric_value = line.split('\t')
+    batch_id_current, metric_value, metric_selected = line.split('\t')
     # convert count (currently a string) to int
     try:
         batch_id_current = int(batch_id_current)
