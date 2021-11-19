@@ -12,9 +12,9 @@ metric_dict = {
 }
 metric_selected = "CPUUtilization_Average"
 
-batch_size = 7
+batch_size = 5
 batch_id = 2
-batch_unit = 1000
+batch_unit = 10
 
 counter_total = 0
 batch_id_current = batch_id-1
@@ -29,8 +29,11 @@ for line in sys.stdin:
         elif (counter_total % (batch_unit) == 0) and (counter_total >= (batch_id*batch_unit)):
             batch_id_current += 1            
         elif (counter_total >= batch_id*batch_unit) and (counter_total < (batch_id+batch_size)*batch_unit):
-            print('{}\t{}\t{}'.format(
-                batch_id_current, metric_value, metric_selected))
+            print('{}\t{}\t{}\t{}'.format(
+                batch_id_current, metric_value, metric_selected, batch_unit))
+            with open("NDBench-testing-mapped.csv", "a+") as f:
+                # \n is for test
+                f.write('{}\t{}\t{}\t{}\n'.format(batch_id_current, metric_value, metric_selected, batch_unit))
         else:           
             continue
     except Exception:

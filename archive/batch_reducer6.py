@@ -3,16 +3,6 @@
 
 from operator import itemgetter
 import sys
-import math
-
-def median(lst):
-    lstLen = len(lst)
-    index = (lstLen - 1) // 2
-   
-    if (lstLen % 2):
-        return lst[index]
-    else:
-        return (lst[index] + lst[index + 1])/2.0
 
 batch_current = 0
 
@@ -37,17 +27,18 @@ for line in sys.stdin:
            # Number of observations
            batch_unit=len(metric_list)
            # Mean of the data
-           metric_mean=sum(metric_list)/batch_unit
-           metric_med=median(metric_list)
+           #metric_mean=sum(metric_list)/batch_unit
+           #metric_med=median(metric_list)
            # Square deviations
-           deviations = [(x - metric_mean) ** 2 for x in metric_list]
+           deviations = 1
+           #deviations = [(x - metric_mean) ** 2 for x in metric_list]
            # Variance
-           variance = sum(deviations) / batch_unit
+           variance = 1
+           #variance = sum(deviations) / batch_unit
            # Standard deviation
-           std_dev = math.sqrt(variance)
+           std_dev = 1
            print('batch_id: {}\t metric: {}\t min: {}\t max: {}\t med: {}\t std_dev: {}'.format(
-               batch_current, metric_selected.lower(), metric_list[0], metric_list[-1], metric_med, std_dev))
-           del metric_list[:]
+               batch_current, metric_selected, 1, 1, 1, batch_unit))           
        metric_list.append(metric_value)
        batch_current = batch_id_current
        continue
@@ -55,17 +46,18 @@ for line in sys.stdin:
        metric_list.append(metric_value)
        continue
 
+
 # Number of observations
 batch_unit=len(metric_list)
 # Mean of the data
-metric_mean=sum(metric_list)/batch_unit
-metric_med=median(metric_list)
+#metric_mean=sum(metric_list)/batch_unit
+#metric_med=median(metric_list)
 # Square deviations
-deviations = [(x - metric_mean) ** 2 for x in metric_list]
+deviations = 1
 # Variance
-variance = sum(deviations) / batch_unit
+variance = 1
 # Standard deviation
-std_dev = math.sqrt(variance)
+std_dev = 1
 
 print('batch_id: {}\t metric: {}\t min: {}\t max: {}\t med: {}\t std_dev: {}'.format(
-                batch_current, metric_selected.lower(), metric_list[0], metric_list[-1], metric_med, std_dev))
+                batch_current, metric_selected, 1, 1, 1, batch_unit))

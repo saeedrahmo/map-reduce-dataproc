@@ -81,7 +81,9 @@ Tested successfully (sorted):
 
 yarn jar /usr/lib/hadoop/hadoop-streaming.jar -D mapreduce.partition.keycomparator.options='-k2nr' -D stream.num.map.output.key.fields=2 -D mapred.map.tasks=1 -D mapreduce.job.reduces=1 -file mypy/batch_mapper4.py -mapper mypy/batch_mapper4.py -file mypy/batch_reducer4.py -reducer mypy/batch_reducer4.py -input /batchfiles/ -output /tmp/result21
 
-yarn jar /usr/lib/hadoop/hadoop-streaming.jar -D mapreduce.partition.keycomparator.options='-k2nr' -D stream.num.map.output.key.fields=2 -D mapred.map.tasks=1 -D mapreduce.job.reduces=1 -file mypy/batch_mapper4.py -mapper mypy/batch_mapper4.py -file mypy/batch_reducer4.py -reducer mypy/batch_reducer4.py -input /batchfiles/ -output /tmp/result22
+# final tested successfuly
+
+yarn jar /usr/lib/hadoop/hadoop-streaming.jar -D mapreduce.partition.keycomparator.options='-k2nr' -D stream.num.map.output.key.fields=2 -D mapred.map.tasks=1 -D mapreduce.job.reduces=1 -file mypy/batch_mapper.py -mapper mypy/batch_mapper.py -file mypy/batch_reducer.py -reducer mypy/batch_reducer.py -input /batchfiles/ -output /tmp/result
 
 # calculating deviation
 

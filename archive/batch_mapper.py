@@ -12,9 +12,9 @@ metric_dict = {
 }
 metric_selected = "CPUUtilization_Average"
 
-batch_size = 7
+batch_size = 5
 batch_id = 2
-batch_unit = 1000
+batch_unit = 10
 
 counter_total = 0
 batch_id_current = batch_id-1
@@ -30,7 +30,7 @@ for line in sys.stdin:
             batch_id_current += 1            
         elif (counter_total >= batch_id*batch_unit) and (counter_total < (batch_id+batch_size)*batch_unit):
             print('{}\t{}\t{}'.format(
-                batch_id_current, metric_value, metric_selected))
+                batch_id_current, metric_selected, metric_value))
         else:           
             continue
     except Exception:
