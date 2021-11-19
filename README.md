@@ -91,4 +91,15 @@ https://www.w3schools.com/python/python_ml_standard_deviation.asp
 
 https://stackabuse.com/calculating-variance-and-standard-deviation-in-python/
 
-![Creating Hadoop cluster on Google Dataproc cloud service](https://github.com/saeedrahmo/coen424-assignment-2/blob/main/screenshots/Creating%20Hadoop%20cluster%20on%20Google%20Dataproc%20cloud%20service.png?raw=true "Creating Hadoop cluster on Google Dataproc cloud service")
+# ScreenShots
+![ScreenShot](https://github.com/saeedrahmo/coen424-assignment-2/blob/main/screenshots/Creating%20Hadoop%20cluster%20on%20Google%20Dataproc%20cloud%20service.png?raw=true "Creating Hadoop cluster on Google Dataproc cloud service")
+
+![ScreenShot](https://github.com/saeedrahmo/coen424-assignment-2/blob/main/screenshots/Hadoop%20cluster%20nodes.png?raw=true "Hadoop cluster nodes")
+
+![ScreenShot](https://github.com/saeedrahmo/coen424-assignment-2/blob/main/screenshots/Hadoop%20nodes%20configuration.png?raw=true "Hadoop nodes configuration")
+
+![ScreenShot](https://github.com/saeedrahmo/coen424-assignment-2/blob/main/screenshots/Monitoring%20the%20Hadoop%20cluster.png?raw=true "Monitoring the Hadoop cluster")
+
+![ScreenShot](https://github.com/saeedrahmo/coen424-assignment-2/blob/main/screenshots/Puttin%20files%20into%20HDFS%20and%20submitting%20the%20job.png?raw=true "Putting files into HDFS and submitting the job")
+
+![ScreenShot](https://github.com/saeedrahmo/coen424-assignment-2/blob/main/screenshots/Getting%20the%20results%20from%20HDFS.png?raw=true "Getting the results from HDFS")
