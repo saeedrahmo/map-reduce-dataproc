@@ -91,4 +91,4 @@ https://www.w3schools.com/python/python_ml_standard_deviation.asp
 
 https://stackabuse.com/calculating-variance-and-standard-deviation-in-python/
 
-![Creating Hadoop cluster on Google Dataproc cloud service](https://github.com/saeedrahmo/coen424-assignment-2/blob/main/screenshots/Creating%20Hadoop%20cluster%20on%20Google%20Dataproc%20cloud%20service.png
+![ScreenShot](https://github.com/saeedrahmo/coen424-assignment-2/blob/main/screenshots/Creating%20Hadoop%20cluster%20on%20Google%20Dataproc%20cloud%20service.png
